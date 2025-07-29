@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Category Search</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Search by Category</h1>
+        <form method="POST">
+            <input type="text" name="category" placeholder="Enter category...">
+            <button type="submit">Search</button>
+        </form>
+
+        {% if results %}
+            <h2>Libraries in this Category:</h2>
+            {% for lib in results %}
+                <div class="result">
+                    <h3>{{ lib.title }}</h3>
+                    <p><strong>Category:</strong> {{ lib.category }}</p>
+                    <div>{{ lib.content | safe }}</div>
+                </div>
+            {% endfor %}
+            <div style="text-align: center; margin-top: 30px;">
+    <a href="/" class="back-button">⬅ Back to Homepage</a>
+</div>
+
+        {% elif request.method == 'POST' %}
+            <p>No libraries found in this category.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

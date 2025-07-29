@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Search</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Search by Library Name</h1>
+        <form method="POST" onsubmit="showLoading()">
+            <input type="text" name="query" placeholder="Enter library name...">
+            <button type="submit">Search</button>
+        </form>
+
+        <div id="loading" style="display:none;">🔄 Loading...</div>
+
+        {% if info %}
+            <div class="result">
+                <h2>{{ info.name }}</h2>
+                <p><strong>Category:</strong> {{ info.predicted_category }}</p>
+                <div>{{ info.description | safe }}</div>
+                {% if info.homepage and info.homepage != '#' %}
+                    <p><a href="{{ info.homepage }}" target="_blank">Homepage</a></p>
+                {% endif %}
+            </div>
+        {% elif request.method == 'POST' %}
+            <p>No results found.</p>
+        {% endif %}
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="/" class="back-button">⬅ Back to Homepage</a>
+        </div>
+    </div>
+
+    <script>
+        function showLoading() {
+            document.getElementById("loading").style.display = "block";
+        }
+    </script>
+</body>
+</html>

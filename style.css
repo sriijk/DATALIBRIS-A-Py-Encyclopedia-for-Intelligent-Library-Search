@@ -1,0 +1,111 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('/static/bg.png') no-repeat center center fixed;
+    background-size: cover;
+    padding: 40px;
+    margin: 0;
+}
+
+.container {
+    background: rgba(220, 219, 219, 0.95);
+    padding: 30px;
+    border-radius: 16px;
+    width: 60%;
+    margin: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+}
+
+.category-results .result {
+    background: #fdfdfd;
+    padding: 15px;
+    margin-top: 10px;
+    border-left: 4px solid #007BFF;
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #0e0e0e;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+#loading {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    color: #888;
+}
+
+.result {
+    margin-top: 30px;
+    animation: fadeIn 0.5s ease-in-out;
+    color: #333;
+}
+
+.result img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.note {
+            position: absolute;
+            bottom: 15px;
+            font-size: 16px;
+            color: white;
+        }
+
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(40, 167, 69, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: #1e7e34;
+    transform: scale(1.05);
+}

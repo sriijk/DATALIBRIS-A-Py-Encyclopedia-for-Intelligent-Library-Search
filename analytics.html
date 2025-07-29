@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Analytics</title>
+    <link rel="stylesheet" href="/static/style1.css">
+</head>
+<body>
+    <h1 >Search Analytics</h1>
+
+    {% if is_fallback %}
+        <p><em>Showing sample analytics. Real-time data will appear after users perform searches.</em></p>
+    {% endif %}
+
+    {% if graph_div %}
+        {{ graph_div|safe }}
+    {% endif %}
+
+    <br>
+    <div style="text-align: center; margin-top: 30px;">
+    <a href="/" class="back-button">⬅ Back to Homepage</a>
+</div>
+
+</body>
+</html>

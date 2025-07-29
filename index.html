@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DATALIBRIS</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>DATALIBRIS: A Py-Encyclopedia</h1>
+        <p>Select a search mode:</p>
+
+        <form action="/library" method="get">
+           <center><button type="submit" title="Search by Python Library Name">🔍 Library Search</button></center>
+        </form>
+        <br>
+        <form action="/category" method="get">
+            <center><button type="submit" title="Browse Libraries by Category">📂 Categorical Search</button></center>
+        </form>
+        <br>
+        <form action="{{ url_for('analytics') }}" method="get">
+            <center><button type="submit" class="btn btn-primary" title="See Which Libraries Are Most Searched">📊 View Search Analytics</button></center>
+        </form>
+
+        {% if recent %}
+        <div style="margin-top: 25px;">
+            <h3>🕘 Recent Searches:</h3>
+            <ul>
+                {% for item in recent %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="note">
+        Note: These Website is used to fetch libraries data and information only.<br>
+        Available libraries in dataset: Python, Numpy, Pandas, Matplotlib, Scikit-learn, Flask, TensorFlow, PyTorch, OpenCV, Seaborn, Plotly, BeautifulSoup, Requests, Tkinter, Django, FastAPI, PyInstaller, Cython,<br>
+        dlib, SimpleCV, Scrapy, lxml, Twisted, Socket, PyQT, wxPython. Rest are fetched live from PyPI.
+    </div>
+</body>
+</html>
